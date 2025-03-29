@@ -12,6 +12,10 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Skills from "./pages/Skills";
+import SkillDetail from "./pages/SkillDetail";
+import Profile from "./pages/Profile";
+import Requests from "./pages/Requests";
+import Messages from "./pages/Messages";
 import NotFound from "./pages/NotFound";
 
 // Protected route component
@@ -37,6 +41,10 @@ const AppRoutes = () => (
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/skills" element={<Skills />} />
+    <Route path="/skills/:id" element={<SkillDetail />} />
+    <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+    <Route path="/requests" element={<ProtectedRoute><Requests /></ProtectedRoute>} />
+    <Route path="/messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
     
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
